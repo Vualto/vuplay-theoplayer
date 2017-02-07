@@ -1,5 +1,8 @@
 module.exports = function (grunt) {
-    var theoplayerUrl = "https://cdn-vuplay.drm.technology/standalone/theoplayer/0.2.8/theoplayer.chromeless.js"
+    var theoplayerUrls = {
+        chromeless: "https://cdn-vuplay.drm.technology/standalone/theoplayer/0.2.8/theoplayer.chromeless.js",
+        scriptsPath: "https://cdn-vuplay.drm.technology/standalone/theoplayer/0.2.8/"
+    };
 
     var vuplayUrls = {
         min: "vuplay.min.js",
@@ -39,13 +42,25 @@ module.exports = function (grunt) {
                     {
                         src: "dist/index.html",
                         dest: "dist/index.html"
+                    },
+                    {
+                        src: "dist/vuplay.js",
+                        dest: "dist/vuplay.js"
+                    },
+                    {
+                        src: "dist/vuplay.min.js",
+                        dest: "dist/vuplay.min.js"
                     }
                 ],
                 options: {
                     replacements: [
                         {
-                            pattern: "{theoplayerjs}",
-                            replacement: theoplayerUrl
+                            pattern: "{theoplayerjs-chromeless}",
+                            replacement: theoplayerUrls.chromeless
+                        },
+                        {
+                            pattern: "{theoplayerjs-scripts-path}",
+                            replacement: theoplayerUrls.scriptsPath
                         },
                         {
                             pattern: "{vuplayjs}",
