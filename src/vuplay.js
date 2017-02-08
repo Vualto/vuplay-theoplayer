@@ -1,9 +1,9 @@
 (function () {
-    // Set your mpeg-DASH or HLS url here.
-    var url = "<your-stream-url>";
+    // Set your HLS url here.
+    var hlsUrl = "<your-HLS-stream-url>";
 
-    // The stream type is required when setting the source on the player
-    var urlType = "application/dash+xml" // or "application/x-mpegURL" if stream is HLS
+    // Set your MPEG-dash url here.
+    var dashUrl = "<your-dash-stream-url>";
 
     // Please login to https://admin.drm.technology to generate a vudrm token.
     var vudrmToken = "<your-vudrm-token>";
@@ -16,33 +16,43 @@
         containerElement.style.height = (containerElement.clientWidth / 16) * 9;
     };
     onResize();
-    window.onresize = onResize;    
+    window.onresize = onResize;
 
     // Setup THEOplayer and set autoplay to true
     var player = new THEOplayer.Player(containerElement, {
-        libraryLocation : '{theoplayerjs-scripts-path}',
+        libraryLocation: '{theoplayerjs-scripts-path}',
     });
     player.autoplay = true;
 
-    // For PlayReady the vudrm token is attached as a querystring parameter on the license server url.
-    var playReadyLaUrl = "https://playready-license.drm.technology/rightsmanager.asmx?token=" + encodeURIComponent(vudrmToken);
-
-    // For widevine TBC
-    var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
-
-    // Set the source url and add the drm settings
-    player.setSource({
-        sources: {
-            src: url,
-            type: urlType,
-            drm: {
-                playready: {
-                    licenseAcquisitionURL: playReadyLaUrl
-                 },
-                widevine: {
-                    licenseAcquisitionURL: widevineLaUrl
-                 }
+    // Set the sources with the two stream urls and the appropriate drm settings
+    player.source = {
+        sources: [
+            {
+                src: dashUrl,
+                type: 'application/dash+xml',
+                drm: {
+                    integration: 'vudrm',
+                    token: vudrmToken,
+                    widevine: {
+                        licenseAcquisitionURL: 'https://widevine-proxy.drm.technology/proxy'
+                    },
+                    playready: {
+                        licenseAcquisitionURL: 'https://playready-license.drm.technology/rightsmanager.asmx'
+                    }
+                }
+            },
+            {
+                src: hlsUrl,
+                type: 'application/x-mpegurl',
+                drm: {
+                    integration: 'vudrm',
+                    token: vudrmToken,
+                    fairplay: {
+                        certificateURL: 'https://fairplay-license.drm.technology/certificate',
+                        licenseAcquisitionURL: 'https://fairplay-license.drm.technology/license'
+                    }
+                }
             }
-        }
-    })
+        ]
+    };
 })();
