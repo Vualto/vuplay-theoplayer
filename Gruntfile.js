@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
     var theoplayerUrls = {
-        chromeless: "https://cdn-vuplay.drm.technology/standalone/theoplayer/0.2.8/theoplayer.chromeless.js",
-        scriptsPath: "https://cdn-vuplay.drm.technology/standalone/theoplayer/0.2.8/"
+        chromeless: "https://cdn-vuplay.drm.technology/standalone/theoplayer/2.8.1/theoplayer.chromeless.js",
+        scriptsPath: "https://cdn-vuplay.drm.technology/standalone/theoplayer/2.8.1/"
     };
 
     var vuplayUrls = {
