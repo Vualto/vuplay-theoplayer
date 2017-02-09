@@ -32,7 +32,12 @@ declare namespace THEOplayer {
         videoWidth: number;
         volume: VolumeOptions;
 
+        play(): void;
+        pause(): void;
+        setSource(sourceDescription: SourceDescription);
+        stop(): void;
         
+
     }
 
 }
