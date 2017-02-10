@@ -24,6 +24,22 @@
     });
     player.autoplay = true;
 
+    player.addEventListener("error", function (event) {
+        console.error("player error", event);
+    });
+
+    player.addEventListener("encrypted", function (event) {
+        console.info("content is encrypted", event);
+    });
+
+    player.addEventListener("contentprotectionerror", function (event) {
+        console.error("content protection error thrown", event);
+    });
+
+    player.addEventListener("contentprotectionsuccess", function (event) {
+        console.info("content protection success", event);
+    });
+
     // Set the sources with the two stream urls and the appropriate drm settings
     player.source = {
         sources: [
