@@ -24,6 +24,7 @@
     });
     player.autoplay = true;
 
+    // Add some event listeners
     player.addEventListener("error", function (event) {
         console.error("player error", event);
     });
@@ -41,34 +42,59 @@
     });
 
     // Set the sources with the two stream urls and the appropriate drm settings
+    // currently you can only set one sources
+    // if the stream is not encrypted *do not* set the drm property.
+
+    // HLS with Fairplay Example
+    
+    // player.source = {
+    //     sources: [
+    //         {
+    //             src: hlsUrl,
+    //             type: 'application/x-mpegurl',
+    //             drm: {
+    //                 integration: 'vudrm',
+    //                 token: vudrmToken,
+    //                 fairplay: {
+    //                     certificateURL: 'https://fairplay-license.drm.technology/certificate',
+    //                     licenseAcquisitionURL: 'https://fairplay-license.drm.technology/license'
+    //                 }
+    //             }
+    //         }
+    //     ]
+    // };
+
+    // MPEG-dash with Widevine and PlayReady Example
+
+    // player.source = {
+    //     sources: [
+    //         {
+    //             src: dashUrl,
+    //             type: 'application/dash+xml',
+    //             drm: {
+    //                 integration: 'vudrm',
+    //                 token: vudrmToken,
+    //                 widevine: {
+    //                     licenseAcquisitionURL: 'https://widevine-proxy.drm.technology/proxy'
+    //                 },
+    //                 playready: {
+    //                     licenseAcquisitionURL: 'https://playready-license.drm.technology/rightsmanager.asmx'
+    //                 }
+    //             }
+    //         }
+    //     ]
+    // };
+
+    // HLS with AES Example
+
+    var streamUrl = hlsUrl + "?" + encodeURIComponent(vudrmToken);
     player.source = {
         sources: [
             {
-                src: dashUrl,
-                type: 'application/dash+xml',
-                drm: {
-                    integration: 'vudrm',
-                    token: vudrmToken,
-                    widevine: {
-                        licenseAcquisitionURL: 'https://widevine-proxy.drm.technology/proxy'
-                    },
-                    playready: {
-                        licenseAcquisitionURL: 'https://playready-license.drm.technology/rightsmanager.asmx'
-                    }
-                }
-            },
-            {
-                src: hlsUrl,
-                type: 'application/x-mpegurl',
-                drm: {
-                    integration: 'vudrm',
-                    token: vudrmToken,
-                    fairplay: {
-                        certificateURL: 'https://fairplay-license.drm.technology/certificate',
-                        licenseAcquisitionURL: 'https://fairplay-license.drm.technology/license'
-                    }
-                }
+                src: streamUrl,
+                type: 'application/x-mpegurl'
             }
         ]
     };
+
 })();
