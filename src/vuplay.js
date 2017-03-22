@@ -87,7 +87,7 @@
 
     // HLS with AES Example
 
-    var streamUrl = hlsUrl + "?" + encodeURIComponent(vudrmToken);
+    var streamUrl = hlsUrl + "?token=" + encodeURIComponent(vudrmToken);
     player.source = {
         sources: [
             {
