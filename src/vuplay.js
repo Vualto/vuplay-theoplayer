@@ -87,14 +87,14 @@
 
     // HLS with AES Example
 
-    var streamUrl = hlsUrl + "?token=" + encodeURIComponent(vudrmToken);
-    player.source = {
-        sources: [
-            {
-                src: streamUrl,
-                type: 'application/x-mpegurl'
-            }
-        ]
-    };
+    // var streamUrl = hlsUrl + "?token=" + encodeURIComponent(vudrmToken);
+    // player.source = {
+    //     sources: [
+    //         {
+    //             src: streamUrl,
+    //             type: 'application/x-mpegurl'
+    //         }
+    //     ]
+    // };
 
 })();
