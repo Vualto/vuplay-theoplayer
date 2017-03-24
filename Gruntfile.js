@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
     var theoplayerUrls = {
-        chromeless: "https://cdn-vuplay.drm.technology/standalone/theoplayer/2.8.1/theoplayer.chromeless.js",
-        scriptsPath: "https://cdn-vuplay.drm.technology/standalone/theoplayer/2.8.1/"
+        chromeless: "https://cdn.vuplay.co.uk/vrt/theoplayer/2.9.3/theoplayer.chromeless.js",
+        scriptsPath: "https://cdn.vuplay.co.uk/vrt/theoplayer/2.9.3/"
     };
 
     var vuplayUrls = {
@@ -75,7 +75,7 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     protocol: "http",
-                    hostname: "theoplayer.vuplay.local.drm.technology",
+                    hostname: "theoplayer.local.vuplay.co.uk",
                     port: 14703,
                     base: "dist",
                     keepalive: true

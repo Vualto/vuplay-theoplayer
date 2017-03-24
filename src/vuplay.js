@@ -1,12 +1,12 @@
 (function () {
     // Set your HLS url here.
-    var hlsUrl = "<your-HLS-stream-url>";
+    var hlsUrl = "https://live-hls.lwc.vrtcdn.be/groupa/live/5c84cb7c-c801-487d-bccc-b8d84d5538c1/live_aes.isml/manifest.m3u8";
 
     // Set your MPEG-dash url here.
     var dashUrl = "<your-dash-stream-url>";
 
     // Please login to https://admin.drm.technology to generate a vudrm token.
-    var vudrmToken = "<your-vudrm-token>";
+    var vudrmToken = "vrt|2017-03-24T14:43:35Z|Y8QOpFOiRuZlEy1LhDr46w==|64ee3cbd97e994b3166cc70b52b77b851f0ecb16";
 
     // A HTMLDiv that HTML elements (including the video element) will be added to
     var containerElement = document.getElementById("vuplay-container");
@@ -87,14 +87,14 @@
 
     // HLS with AES Example
 
-    // var streamUrl = hlsUrl + "?token=" + encodeURIComponent(vudrmToken);
-    // player.source = {
-    //     sources: [
-    //         {
-    //             src: streamUrl,
-    //             type: 'application/x-mpegurl'
-    //         }
-    //     ]
-    // };
+    var streamUrl = hlsUrl + "?token=" + encodeURIComponent(vudrmToken);
+    player.source = {
+        sources: [
+            {
+                src: streamUrl,
+                type: 'application/x-mpegurl'
+            }
+        ]
+    };
 
 })();
