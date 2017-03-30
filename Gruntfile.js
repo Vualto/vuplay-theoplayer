@@ -17,7 +17,7 @@ module.exports = function (grunt) {
         copy: {
             all: {
                 expand: true,
-                src: ["index.html", "poster.png"],
+                src: ["index.html", "poster.png", "hls.html", "dash.html", "src/hls.js", "src/dash.js"],
                 dest: "<%= dist %>/",
                 flatten: true
             }
@@ -50,6 +50,22 @@ module.exports = function (grunt) {
                     {
                         src: "dist/vuplay.min.js",
                         dest: "dist/vuplay.min.js"
+                    },
+                    {
+                        src: "dist/hls.html",
+                        dest: "dist/hls.html"
+                    },
+                    {
+                        src: "dist/hls.js",
+                        dest: "dist/hls.js"
+                    },
+                    {
+                        src: "dist/dash.html",
+                        dest: "dist/dash.html"
+                    },
+                    {
+                        src: "dist/dash.js",
+                        dest: "dist/dash.js"
                     }
                 ],
                 options: {
