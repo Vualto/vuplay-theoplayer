@@ -1,9 +1,6 @@
 (function () {
-    // Set your HLS url here.
-    var hlsUrl = "<your-HLS-stream-url>";
-
-    // Set your MPEG-dash url here.
-    var dashUrl = "<your-mpeg-dash-stream-url>";
+    // Set your HLS or mpeg-DASH stream url here.
+    var streamUrl = "<your-stream-url>";
 
     // Please login to https://admin.drm.technology to generate a vudrm token.
     var vudrmToken = "<vudrm-token>";
@@ -46,7 +43,7 @@
     // player.source = {
     //     sources: [
     //         {
-    //             src: hlsUrl,
+    //             src: streamUrl,
     //             type: 'application/x-mpegurl',
     //             drm: {
     //                 integration: 'vudrm',
@@ -65,7 +62,7 @@
     // player.source = {
     //     sources: [
     //         {
-    //             src: dashUrl,
+    //             src: streamUrl,
     //             type: 'application/dash+xml',
     //             drm: {
     //                 integration: 'vudrm',
@@ -83,7 +80,7 @@
 
     // HLS with AES Example
 
-    // var streamUrl = hlsUrl + "?token=" + encodeURIComponent(vudrmToken);
+    // streamUrl = streamUrl + "?token=" + encodeURIComponent(vudrmToken);
     // player.source = {
     //     sources: [
     //         {
