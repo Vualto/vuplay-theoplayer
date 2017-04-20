@@ -1,7 +1,8 @@
 module.exports = function (grunt) {
     var theoplayerUrls = {
         player: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/theoplayer.js",
-        scriptsPath: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/"
+        scriptsPath: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/",
+        css: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/ui.css"
     };
 
     var vuplayUrls = {
@@ -59,6 +60,10 @@ module.exports = function (grunt) {
                             replacement: theoplayerUrls.player
                         },
                         {
+                            pattern: "{theoplayer-css}",
+                            replacement: theoplayerUrls.css
+                        },
+                        {
                             pattern: "{theoplayerjs-scripts-path}",
                             replacement: theoplayerUrls.scriptsPath
                         },
@@ -74,7 +79,7 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
-                    protocol: "http",
+                    protocol: "https",
                     hostname: "theoplayer.local.vuplay.co.uk",
                     port: 14703,
                     base: "dist",
