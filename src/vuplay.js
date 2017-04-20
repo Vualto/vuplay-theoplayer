@@ -3,7 +3,7 @@
     var streamUrl = "<your-stream-url>";
 
     // Please login to https://admin.drm.technology to generate a vudrm token.
-    var vudrmToken = "<vudrm-token>";
+    var vudrmToken = "<your-vudrm-token>";
 
     // A HTMLDiv that HTML elements (including the video element) will be added to
     var containerElement = document.getElementById("vuplay-container");
