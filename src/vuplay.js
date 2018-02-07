@@ -1,6 +1,6 @@
 (function () {
     // Set your HLS or mpeg-DASH stream url here.
-    var streamUrl = "<your-stream-url>";
+    var streamUrl = "https://d1chyo78gdexn4.cloudfront.net/vualto-demo/big-buck-bunny/big-buck-bunny_nodrm.ism/manifest.m3u8"; // "<your-stream-url>";
 
     // Please login to https://admin.drm.technology to generate a vudrm token.
     var vudrmToken = "<your-vudrm-token>";
@@ -40,22 +40,22 @@
 
     // HLS with Fairplay Example
 
-    // player.source = {
-    //     sources: [
-    //         {
-    //             src: streamUrl,
-    //             type: 'application/x-mpegurl',
-    //             drm: {
-    //                 integration: 'vudrm',
-    //                 token: vudrmToken,
-    //                 fairplay: {
-    //                     certificateURL: 'https://fairplay-license.drm.technology/certificate',
-    //                     licenseAcquisitionURL: 'https://fairplay-license.drm.technology/license'
-    //                 }
-    //             }
-    //         }
-    //     ]
-    // };
+    player.source = {
+        sources: [
+            {
+                src: streamUrl,
+                type: 'application/x-mpegurl',
+                // drm: {
+                //     integration: 'vudrm',
+                //     token: vudrmToken,
+                //     fairplay: {
+                //         certificateURL: 'https://fairplay-license.drm.technology/certificate',
+                //         licenseAcquisitionURL: 'https://fairplay-license.drm.technology/license'
+                //     }
+                // }
+            }
+        ]
+    };
 
     // MPEG-dash with Widevine and PlayReady Example
 
