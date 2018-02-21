@@ -1,6 +1,6 @@
 (function () {
     // Set your HLS or mpeg-DASH stream url here.
-    var streamUrl = "<your-stream-url>";
+    var streamUrl = "https://live-w.lwc.vrtcdn.be/groupc/live/d05012c2-6a5d-49ff-a711-79b32684615b/live.isml/manifest.m3u8";
 
     // Please login to https://admin.drm.technology to generate a vudrm token.
     var vudrmToken = "<your-vudrm-token>";
@@ -9,7 +9,7 @@
     var containerElement = document.getElementById("vuplay-container");
 
     // Setup THEOplayer and set autoplay to true
-    var player = new THEOplayer.Player(containerElement, {
+    window.player = new THEOplayer.Player(containerElement, {
         libraryLocation: '{theoplayerjs-scripts-path}',
         ui: {
             fluid: true
@@ -33,6 +33,25 @@
     player.addEventListener("contentprotectionsuccess", function (event) {
         console.info("content protection success", event);
     });
+
+    document.getElementById("rw-btn").addEventListener("click", rewind);
+    document.getElementById("ff-btn").addEventListener("click", fastforward);
+
+    function rewind() {
+        console.log(player.currentProgramDateTime);
+        var temp = new Date(player.currentProgramDateTime);
+        temp.setSeconds(temp.getSeconds() - 10);
+        player.currentProgramDateTime = temp;
+        console.log(player.currentProgramDateTime);
+    }
+
+    function fastforward() {
+        console.log(player.currentProgramDateTime);
+        var temp = new Date(player.currentProgramDateTime);
+        temp.setSeconds(temp.getSeconds() + 10);
+        player.currentProgramDateTime = temp;
+        console.log(player.currentProgramDateTime);
+    }
 
     // Set the sources with the two stream urls and the appropriate drm settings
     // currently you can only set one sources
@@ -81,13 +100,13 @@
     // HLS with AES Example
 
     // streamUrl = streamUrl + "?token=" + encodeURIComponent(vudrmToken);
-    // player.source = {
-    //     sources: [
-    //         {
-    //             src: streamUrl,
-    //             type: 'application/x-mpegurl'
-    //         }
-    //     ]
-    // };
+    player.source = {
+        sources: [
+            {
+                src: streamUrl,
+                type: 'application/x-mpegurl'
+            }
+        ]
+    };
 
 })();

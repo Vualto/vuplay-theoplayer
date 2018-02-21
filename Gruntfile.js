@@ -1,8 +1,8 @@
 module.exports = function (grunt) {
     var theoplayerUrls = {
-        player: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/theoplayer.js",
-        scriptsPath: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/",
-        css: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/ui.css"
+        player: "https://cdn.vuplay.co.uk/ep/theoplayer/2.29.7/theoplayer.js",
+        scriptsPath: "https://cdn.vuplay.co.uk/ep/theoplayer/2.29.7/",
+        css: "https://cdn.vuplay.co.uk/ep/theoplayer/2.29.7/ui.css"
     };
 
     var vuplayUrls = {
@@ -30,13 +30,13 @@ module.exports = function (grunt) {
                 dest: "dist/vuplay.js",
             },
         },
-        uglify: {
-            js: {
-                files: {
-                    "dist/vuplay.min.js": ['dist/vuplay.js']
-                }
-            }
-        },
+        // uglify: {
+        //     js: {
+        //         files: {
+        //             "dist/vuplay.min.js": ['dist/vuplay.js']
+        //         }
+        //     }
+        // },
         "string-replace": {
             dist: {
                 files: [
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
-                    protocol: "https",
+                    protocol: "http",
                     hostname: "theoplayer.local.vuplay.co.uk",
                     port: 14703,
                     base: "dist",
@@ -92,10 +92,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-concat");
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    // grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks("grunt-string-replace");
     grunt.loadNpmTasks("grunt-contrib-connect");
 
-    grunt.registerTask("build", ["clean", "copy", "concat", "uglify", "string-replace"]);
+    grunt.registerTask("build", ["clean", "copy", "concat", /*"uglify",*/ "string-replace"]);
     grunt.registerTask("serve", ["build", "connect"]);
 };
