@@ -1,9 +1,12 @@
 module.exports = function (grunt) {
+    var version = "2.49.1/2018-02-27";
+    var client = "/ep";
     var theoplayerUrls = {
-        player: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/theoplayer.js",
-        scriptsPath: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/",
-        css: "https://cdn.vuplay.co.uk/theoplayer/2.9.5/ui.css"
+        player: `https://cdn.vuplay.co.uk${client}/theoplayer/${version}/theoplayer.js`,
+        scriptsPath: `https://cdn.vuplay.co.uk${client}/theoplayer/${version}/`,
+        css: `https://cdn.vuplay.co.uk${client}/theoplayer/${version}/ui.css`
     };
+    console.info("THEOplayer assets: ", theoplayerUrls.player);
 
     var vuplayUrls = {
         min: "vuplay.min.js",
