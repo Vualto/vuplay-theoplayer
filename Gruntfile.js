@@ -1,10 +1,10 @@
 module.exports = function (grunt) {
-    var version = "2.49.1/2018-02-27";
-    var client = "/ep";
+    var version = "<version>";
+    var client = "<client>";
     var theoplayerUrls = {
-        player: `https://cdn.vuplay.co.uk${client}/theoplayer/${version}/theoplayer.js`,
-        scriptsPath: `https://cdn.vuplay.co.uk${client}/theoplayer/${version}/`,
-        css: `https://cdn.vuplay.co.uk${client}/theoplayer/${version}/ui.css`
+        player: `<theoplayer JS>`,
+        scriptsPath: `<theoplayer assets>`,
+        css: `<css stylesheet>`
     };
     console.info("THEOplayer assets: ", theoplayerUrls.player);
 

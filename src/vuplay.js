@@ -1,8 +1,9 @@
 (function () {
     // Set your HLS or mpeg-DASH stream url here.
-    var streamUrl = "https://d1chyo78gdexn4.cloudfront.net/vualto-demo/big-buck-bunny/big-buck-bunny_nodrm.ism/manifest.m3u8";
+    var streamUrl = "<your-stream-url>";
+
     // Please login to https://admin.drm.technology to generate a vudrm token.
-    // var vudrmToken = "<your-vudrm-token>";
+    var vudrmToken = "<your-vudrm-token>";
 
     // A HTMLDiv that HTML elements (including the video element) will be added to
     var containerElement = document.getElementById("vuplay-container");
@@ -33,10 +34,18 @@
         console.info("content protection success", event);
     });
 
-    player.addEventListener("seeking", function(event) { console.warn("seeking ",event); });
-    player.addEventListener("seeked", function(event) { console.warn("seeked ",event); });
-    player.addEventListener("canplay", function(event) { console.warn("canplay ",event); });
-    player.addEventListener("readystatechange", function(event) { console.warn("readystatechange ",event); });
+    player.addEventListener("seeking", function (event) {
+        console.warn("seeking ", event);
+    });
+    player.addEventListener("seeked", function (event) {
+        console.warn("seeked ", event);
+    });
+    player.addEventListener("canplay", function (event) {
+        console.warn("canplay ", event);
+    });
+    player.addEventListener("readystatechange", function (event) {
+        console.warn("readystatechange ", event);
+    });
 
     // Set the sources with the two stream urls and the appropriate drm settings
     // currently you can only set one sources
@@ -45,20 +54,14 @@
     // HLS with Fairplay Example
 
     player.source = {
-        sources: [
-            {
-                src: streamUrl,
-                type: 'application/x-mpegurl',
-                // drm: {
-                //     integration: 'vudrm',
-                //     token: vudrmToken,
-                //     fairplay: {
-                //         certificateURL: 'https://fairplay-license.drm.technology/certificate',
-                //         licenseAcquisitionURL: 'https://fairplay-license.drm.technology/license'
-                //     }
-                // }
+        sources: [{
+            src: streamUrl,
+            type: 'application/x-mpegurl',
+            contentProtection: {
+                integration: 'vudrm',
+                token: vudrmToken
             }
-        ]
+        }]
     };
 
     // MPEG-dash with Widevine and PlayReady Example
@@ -68,7 +71,7 @@
     //         {
     //             src: streamUrl,
     //             type: 'application/dash+xml',
-    //             drm: {
+    //             contentProtection: {
     //                 integration: 'vudrm',
     //                 token: vudrmToken,
     //                 widevine: {
