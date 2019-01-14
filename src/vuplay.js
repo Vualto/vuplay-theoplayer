@@ -15,7 +15,7 @@
             fluid: true
         }
     });
-    player.autoplay = true;
+    player.autoplay = false;
 
     // Add some event listeners
     player.addEventListener("error", function (event) {
@@ -34,28 +34,35 @@
         console.info("content protection success", event);
     });
 
+    player.addEventListener("seeking", function (event) {
+        console.warn("seeking ", event);
+    });
+    player.addEventListener("seeked", function (event) {
+        console.warn("seeked ", event);
+    });
+    player.addEventListener("canplay", function (event) {
+        console.warn("canplay ", event);
+    });
+    player.addEventListener("readystatechange", function (event) {
+        console.warn("readystatechange ", event);
+    });
+
     // Set the sources with the two stream urls and the appropriate drm settings
     // currently you can only set one sources
     // if the stream is not encrypted *do not* set the drm property.
 
     // HLS with Fairplay Example
 
-    // player.source = {
-    //     sources: [
-    //         {
-    //             src: streamUrl,
-    //             type: 'application/x-mpegurl',
-    //             drm: {
-    //                 integration: 'vudrm',
-    //                 token: vudrmToken,
-    //                 fairplay: {
-    //                     certificateURL: 'https://fairplay-license.drm.technology/certificate',
-    //                     licenseAcquisitionURL: 'https://fairplay-license.drm.technology/license'
-    //                 }
-    //             }
-    //         }
-    //     ]
-    // };
+    player.source = {
+        sources: [{
+            src: streamUrl,
+            type: 'application/x-mpegurl',
+            contentProtection: {
+                integration: 'vudrm',
+                token: vudrmToken
+            }
+        }]
+    };
 
     // MPEG-dash with Widevine and PlayReady Example
 
@@ -64,7 +71,7 @@
     //         {
     //             src: streamUrl,
     //             type: 'application/dash+xml',
-    //             drm: {
+    //             contentProtection: {
     //                 integration: 'vudrm',
     //                 token: vudrmToken,
     //                 widevine: {
