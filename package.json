@@ -1,32 +1,51 @@
 {
-  "name": "vuplay-dashjs",
+  "name": "vuplay-theoplayer",
   "version": "1.0.0",
-  "description": "a demo repo on how to use vudrm with dashjs",
+  "description": "A simple example of setting up THEOplayer 2.x",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vualto/vuplay-dashjs.git"
+    "url": "git+https://github.com/Vualto/vuplay-theoplayer.git"
   },
   "keywords": [
     "vuplay",
     "vudrm",
-    "dash.js",
-    "dashjs",
+    "theoplayer",
     "vualto",
-    "widevine",
-    "playready",
+    "hls",
     "mpedg-dash",
     "dash"
   ],
-  "author": "Robert Mitchell <robert.mitchell@vualto.com>",
+  "author": {
+    "name": "Robert Mitchell",
+    "email": "robert.mitchell@vualto.com",
+    "url": "https://github.com/somerobmitchell"
+  },
+  "contributors": [
+    {
+      "name": "Mark Niland",
+      "email": "mark.niland@vualto.com",
+      "url": "https://github.com/maniland"
+    },
+    {
+      "name": "Lorenzo Koundouris",
+      "email": "lorenzo.koundouris@vualto.com",
+      "url": "https://github.com/lorenzo-vualto"
+    },
+    {
+      "name": "Stefano Nepa",
+      "email": "stefano.nepa@vualto.com",
+      "url": "https://github.com/stefanovualto"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Vualto/vuplay-dashjs/issues"
+    "url": "https://github.com/Vualto/vuplay-theoplayer/issues"
   },
-  "homepage": "https://github.com/Vualto/vuplay-dashjs#readme",
+  "homepage": "https://github.com/Vualto/vuplay-theoplayer#readme",
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-contrib-clean": "^1.1.0",
