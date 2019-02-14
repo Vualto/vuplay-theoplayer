@@ -1,4 +1,4 @@
-﻿# vuplay THEOplayer
+﻿# VUPLAY THEOplayer
 
 ## Description
 
