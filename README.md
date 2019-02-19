@@ -1,5 +1,7 @@
 ﻿# VUPLAY THEOplayer
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ## Description
 
 This repo will demonstrate how to use [vudrm](http://vudrm.vualto.com/) with [THEOplayer](https://www.theoplayer.com/).
@@ -53,7 +55,7 @@ For a complete breakdown of supported media extensions please contact support@vu
 
 - [Apple's developer resources on HLS](https://developer.apple.com/streaming/)
 - [HLS wikipedia](https://en.wikipedia.org/wiki/HTTP_Live_Streaming)
-- [What is HLS?](http://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-is-HLS-(HTTP-Live-Streaming)-78221.aspx)
+- [What is HLS?](<http://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-is-HLS-(HTTP-Live-Streaming)-78221.aspx>)
 
 ### Encrpyted media extensions
 
