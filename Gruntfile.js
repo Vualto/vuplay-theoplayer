@@ -1,16 +1,16 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     var version = "<version>";
     var client = "<client>";
     var theoplayerUrls = {
         player: `<theoplayer JS>`,
         scriptsPath: `<theoplayer assets>`,
-        css: `<css stylesheet>`
+        css: `<css stylesheet>`,
     };
     console.info("THEOplayer assets: ", theoplayerUrls.player);
 
     var vuplayUrls = {
         min: "vuplay.min.js",
-        debug: "vuplay.js"
+        debug: "vuplay.js",
     };
 
     grunt.initConfig({
@@ -23,60 +23,62 @@ module.exports = function (grunt) {
                 expand: true,
                 src: ["index.html", "poster.png"],
                 dest: "<%= dist %>/",
-                flatten: true
-            }
+                flatten: true,
+            },
         },
         concat: {
             options: {},
             dist: {
-                src: [ "src/vuplay.js" ],
+                src: ["src/vuplay.js"],
                 dest: "dist/vuplay.js",
             },
         },
         uglify: {
             js: {
                 files: {
-                    "dist/vuplay.min.js": ['dist/vuplay.js']
-                }
-            }
+                    "dist/vuplay.min.js": ["dist/vuplay.js"],
+                },
+            },
         },
         "string-replace": {
             dist: {
                 files: [
                     {
                         src: "dist/index.html",
-                        dest: "dist/index.html"
+                        dest: "dist/index.html",
                     },
                     {
                         src: "dist/vuplay.js",
-                        dest: "dist/vuplay.js"
+                        dest: "dist/vuplay.js",
                     },
                     {
                         src: "dist/vuplay.min.js",
-                        dest: "dist/vuplay.min.js"
-                    }
+                        dest: "dist/vuplay.min.js",
+                    },
                 ],
                 options: {
                     replacements: [
                         {
                             pattern: "{theoplayerjs}",
-                            replacement: theoplayerUrls.player
+                            replacement: theoplayerUrls.player,
                         },
                         {
                             pattern: "{theoplayer-css}",
-                            replacement: theoplayerUrls.css
+                            replacement: theoplayerUrls.css,
                         },
                         {
                             pattern: "{theoplayerjs-scripts-path}",
-                            replacement: theoplayerUrls.scriptsPath
+                            replacement: theoplayerUrls.scriptsPath,
                         },
                         {
                             pattern: "{vuplayjs}",
-                            replacement: grunt.option("debug") ? vuplayUrls.debug : vuplayUrls.min
-                        }
-                    ]
-                }
-            }
+                            replacement: grunt.option("debug")
+                                ? vuplayUrls.debug
+                                : vuplayUrls.min,
+                        },
+                    ],
+                },
+            },
         },
 
         connect: {
@@ -86,19 +88,25 @@ module.exports = function (grunt) {
                     hostname: "theoplayer.local.vuplay.co.uk",
                     port: 14703,
                     base: "dist",
-                    keepalive: true
-                }
-            }
-        }
+                    keepalive: true,
+                },
+            },
+        },
     });
 
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-concat");
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-string-replace");
     grunt.loadNpmTasks("grunt-contrib-connect");
 
-    grunt.registerTask("build", ["clean", "copy", "concat", "uglify", "string-replace"]);
+    grunt.registerTask("build", [
+        "clean",
+        "copy",
+        "concat",
+        "uglify",
+        "string-replace",
+    ]);
     grunt.registerTask("serve", ["build", "connect"]);
 };
