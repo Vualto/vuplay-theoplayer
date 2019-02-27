@@ -6,7 +6,6 @@ module.exports = function(grunt) {
         scriptsPath: `<theoplayer assets>`,
         css: `<css stylesheet>`,
     };
-    console.info("THEOplayer assets: ", theoplayerUrls.player);
 
     var vuplayUrls = {
         min: "vuplay.min.js",
