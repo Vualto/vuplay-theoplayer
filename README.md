@@ -1,5 +1,7 @@
 ﻿# VUPLAY THEOplayer
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ## Description
 
 This repo will demonstrate how to use [vudrm](http://vudrm.vualto.com/) with [THEOplayer](https://www.theoplayer.com/).
@@ -40,34 +42,34 @@ For a complete breakdown of supported media extensions please contact support@vu
 
 ### vudrm
 
-- [Contact vualto](http://www.vualto.com/contact-us/)
-- [vudrm](http://vudrm.vualto.com/)
-- [vudrm token documentation](https://docs.vualto.com/projects/vudrm/en/latest/VUDRM-token.html)
+-   [Contact vualto](http://www.vualto.com/contact-us/)
+-   [vudrm](http://vudrm.vualto.com/)
+-   [vudrm token documentation](https://docs.vualto.com/projects/vudrm/en/latest/VUDRM-token.html)
 
 ### mpeg-DASH
 
-- [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP)
-- [What is MPEG-DASH](http://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-is-MPEG-DASH-79041.aspx)
+-   [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP)
+-   [What is MPEG-DASH](http://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-is-MPEG-DASH-79041.aspx)
 
 ### HLS
 
-- [Apple's developer resources on HLS](https://developer.apple.com/streaming/)
-- [HLS wikipedia](https://en.wikipedia.org/wiki/HTTP_Live_Streaming)
-- [What is HLS?](http://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-is-HLS-(HTTP-Live-Streaming)-78221.aspx)
+-   [Apple's developer resources on HLS](https://developer.apple.com/streaming/)
+-   [HLS wikipedia](https://en.wikipedia.org/wiki/HTTP_Live_Streaming)
+-   [What is HLS?](<http://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-is-HLS-(HTTP-Live-Streaming)-78221.aspx>)
 
 ### Encrpyted media extensions
 
-- [Encrypted media extensions specification](https://www.w3.org/TR/2016/CR-encrypted-media-20160705/)
-- [Encrypted media extensions wikipedia](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions)
-- [Encrypted media extensions on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API)
-- [Intro to encrypted media extensions](https://www.html5rocks.com/en/tutorials/eme/basics/)
+-   [Encrypted media extensions specification](https://www.w3.org/TR/2016/CR-encrypted-media-20160705/)
+-   [Encrypted media extensions wikipedia](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions)
+-   [Encrypted media extensions on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API)
+-   [Intro to encrypted media extensions](https://www.html5rocks.com/en/tutorials/eme/basics/)
 
 ### THEOplayer
 
-- [THEOplayer](https://www.theoplayer.com/)
-- [Online documentation for this version](https://support.theoplayer.com/hc/en-us/sections/203124169)
+-   [THEOplayer](https://www.theoplayer.com/)
+-   [Online documentation for this version](https://support.theoplayer.com/hc/en-us/sections/203124169)
 
 ### Build tools
 
-- [npm](https://www.npmjs.com/)
-- [grunt](http://gruntjs.com/)
+-   [npm](https://www.npmjs.com/)
+-   [grunt](http://gruntjs.com/)
