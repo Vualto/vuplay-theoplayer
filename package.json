@@ -20,11 +20,6 @@
         "mpedg-dash",
         "dash"
     ],
-    "author": {
-        "name": "Robert Mitchell",
-        "email": "robert.mitchell@vualto.com",
-        "url": "https://github.com/somerobmitchell"
-    },
     "contributors": [
         {
             "name": "Mark Niland",
