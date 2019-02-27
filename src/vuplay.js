@@ -1,4 +1,4 @@
-(function () {
+(function() {
     // Set your HLS or mpeg-DASH stream url here.
     var streamUrl = "<your-stream-url>";
 
@@ -10,40 +10,40 @@
 
     // Setup THEOplayer and set autoplay to true
     var player = new THEOplayer.Player(containerElement, {
-        libraryLocation: '{theoplayerjs-scripts-path}',
+        libraryLocation: "{theoplayerjs-scripts-path}",
         ui: {
-            fluid: true
-        }
+            fluid: true,
+        },
     });
     player.autoplay = false;
 
     // Add some event listeners
-    player.addEventListener("error", function (event) {
+    player.addEventListener("error", function(event) {
         console.error("player error", event);
     });
 
-    player.addEventListener("encrypted", function (event) {
+    player.addEventListener("encrypted", function(event) {
         console.info("content is encrypted", event);
     });
 
-    player.addEventListener("contentprotectionerror", function (event) {
+    player.addEventListener("contentprotectionerror", function(event) {
         console.error("content protection error thrown", event);
     });
 
-    player.addEventListener("contentprotectionsuccess", function (event) {
+    player.addEventListener("contentprotectionsuccess", function(event) {
         console.info("content protection success", event);
     });
 
-    player.addEventListener("seeking", function (event) {
+    player.addEventListener("seeking", function(event) {
         console.warn("seeking ", event);
     });
-    player.addEventListener("seeked", function (event) {
+    player.addEventListener("seeked", function(event) {
         console.warn("seeked ", event);
     });
-    player.addEventListener("canplay", function (event) {
+    player.addEventListener("canplay", function(event) {
         console.warn("canplay ", event);
     });
-    player.addEventListener("readystatechange", function (event) {
+    player.addEventListener("readystatechange", function(event) {
         console.warn("readystatechange ", event);
     });
 
@@ -54,14 +54,16 @@
     // HLS with Fairplay Example
 
     player.source = {
-        sources: [{
-            src: streamUrl,
-            type: 'application/x-mpegurl',
-            contentProtection: {
-                integration: 'vudrm',
-                token: vudrmToken
-            }
-        }]
+        sources: [
+            {
+                src: streamUrl,
+                type: "application/x-mpegurl",
+                contentProtection: {
+                    integration: "vudrm",
+                    token: vudrmToken,
+                },
+            },
+        ],
     };
 
     // MPEG-dash with Widevine and PlayReady Example
@@ -96,5 +98,4 @@
     //         }
     //     ]
     // };
-
 })();
