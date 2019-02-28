@@ -2,7 +2,7 @@
     var containerElement = document.getElementById("vuplay-container");
     // Set your HLS or mpeg-DASH stream URL here.
     var streamUrl = "<your-stream-url>";
-    // Please login to https://admin.drm.technology to generate a VuDRM token.
+    // Please login to https://admin.drm.technology to generate a VUDRM token.
     var vudrmToken = "<your-vudrm-token>";
 
     // Setup THEOplayer and set autoplay to true

@@ -1,7 +1,7 @@
 {
     "name": "vuplay-theoplayer",
     "version": "1.0.0",
-    "description": "A basic implementation of the THEOplayer player with the option to integrate VuDRM",
+    "description": "A basic implementation of the THEOplayer player with the option to integrate VUDRM",
     "main": "index.html",
     "scripts": {
         "build": "grunt build && grunt serve",

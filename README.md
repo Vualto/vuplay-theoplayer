@@ -5,7 +5,7 @@
 
 ## Description
 
-This repository will demonstrate how to use [VuDRM](https://vudrm.vualto.com/) with [THEOplayer](https://www.theoplayer.com/).
+This repository will demonstrate how to use [VUDRM](https://vudrm.vualto.com/) with [THEOplayer](https://www.theoplayer.com/).
 If you have any questions please contact support@vualto.com
 
 This repository is currently targeted at THEOplayer version 2.51.1
@@ -26,7 +26,7 @@ This repository is currently targeted at THEOplayer version 2.51.1
 2. In file `index.html` replace `<path-to-theoplayer-css>` with a reference to THEOplayer CSS.
 3. In file `index.html` replace `<path-to-theoplayer-js>` with a reference to THEOplayer JS.
 4. In file `src/vuplay-theoplayer.js` replace `<your-stream-url>` with your stream URL. This must can be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) or [HLS](https://developer.apple.com/streaming/) stream.
-5. In file `src/vuplay-theoplayer.js` replace `<your-vudrm-token>` with a VuDRM token from [https://admin.drm.technology](https://admin.drm.technology)
+5. In file `src/vuplay-theoplayer.js` replace `<your-vudrm-token>` with a VUDRM token from [https://admin.drm.technology](https://admin.drm.technology)
 6. Uncomment the appropriate code in the file `src/vuplay-theoplayer.js`. The code you uncomment will depend on the stream technology you want to use.
 7. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files need to run this demo. N.B. You will need to add the host `theoplayer.local.vuplay.co.uk` to your local machine's hosts file in order for this to work. Or use a domain that is compatible with your THEOplayer license.
 8. Load a supported browser and go to `https://theoplayer.local.vuplay.co.uk:14703`
@@ -41,11 +41,11 @@ For a complete breakdown of supported media extensions please contact <support@v
 
 ## Useful links
 
-### VuDRM
+### VUDRM
 
 -   [Contact vualto](https://www.vualto.com/contact-us/)
--   [VuDRM](https://vudrm.vualto.com/)
--   [VuDRM token documentation](https://docs.vualto.com/projects/vudrm/en/latest/VUDRM-token.html)
+-   [VUDRM](https://vudrm.vualto.com/)
+-   [VUDRM token documentation](https://docs.vualto.com/projects/vudrm/en/latest/VUDRM-token.html)
 
 ### mpeg-DASH
 
