@@ -1,6 +1,6 @@
 (function() {
     var containerElement = document.getElementById("vuplay-container");
-    // Set your HLS or mpeg-DASH stream url here.
+    // Set your HLS or mpeg-DASH stream URL here.
     var streamUrl = "<your-stream-url>";
     // Please login to https://admin.drm.technology to generate a VuDRM token.
     var vudrmToken = "<your-vudrm-token>";
@@ -15,7 +15,7 @@
     player.autoplay = false;
     player.poster = "vuplay_poster.png";
 
-    // Set the sources with the two stream urls and the appropriate drm settings
+    // Set the sources with the two stream URL's and the appropriate drm settings
     // currently you can only set one sources
     // if the stream is not encrypted *do not* set the drm property.
 
