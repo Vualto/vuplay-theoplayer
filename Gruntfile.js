@@ -43,7 +43,7 @@ module.exports = function(grunt) {
                 options: {
                     protocol: "https",
                     hostname: "theoplayer.local.vuplay.co.uk",
-                    port: 14703,
+                    port: 14723,
                     base: "dist",
                     keepalive: true,
                 },
