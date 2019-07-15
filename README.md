@@ -28,7 +28,7 @@ This repository is currently targeted at THEOplayer version 2.51.1
 4. In file `src/vuplay-theoplayer.js` replace `<your-stream-url>` with your stream URL. This must can be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) or [HLS](https://developer.apple.com/streaming/) stream.
 5. In file `src/vuplay-theoplayer.js` replace `<your-vudrm-token>` with a VUDRM token from [https://admin.drm.technology](https://admin.drm.technology)
 6. Uncomment the appropriate code in the file `src/vuplay-theoplayer.js`. The code you uncomment will depend on the stream technology you want to use.
-7. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files need to run this demo. N.B. You will need to add the host `theoplayer.local.vuplay.co.uk` to your local machine's hosts file in order for this to work. Or use a domain that is compatible with your THEOplayer license.
+7. Run `grunt serve` in the project's root. This will create a `dist` folder that contains all the files need to run this demo. N.B. You will need to add the host `theoplayer.local.vuplay.co.uk` to your local machine's hosts file in order for this to work. Or use a domain that is compatible with your THEOplayer license.
 8. Load a supported browser and go to `https://theoplayer.local.vuplay.co.uk:14703`
 
 NB: In order to allow DRM encrypted playback in chrome (<https://goo.gl/EEhZqT>), SSL has been enabled for the demo. You will get a warning about an invalid cert `NET::ERR_CERT_AUTHORITY_INVALID` but this can safely be ignored.
